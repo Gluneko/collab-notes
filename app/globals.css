@@ -1,0 +1,48 @@
+* { box-sizing: border-box; }
+body { margin: 0; font: 15px/1.6 -apple-system, "PingFang SC", sans-serif; color: #1c1c1e; background: #f5f5f7; }
+.shell { max-width: 860px; margin: 0 auto; padding: 24px 16px 80px; }
+.bar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; font-size: 13px; color: #6e6e73; }
+.bar input, .bar select { padding: 4px 8px; border: 1px solid #d2d2d7; border-radius: 6px; font-size: 13px; }
+.bar button { padding: 4px 10px; border: 1px solid #d2d2d7; border-radius: 6px; background: #fff; cursor: pointer; font-size: 13px; }
+.bar button:hover { background: #f0f0f3; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #c7c7cc; display: inline-block; }
+.dot.on { background: #34c759; } .dot.off { background: #ff9f0a; }
+.paper { background: #fff; border: 1px solid #e5e5ea; border-radius: 12px; padding: 28px 36px; min-height: 60vh; }
+.ProseMirror { outline: none; }
+.ProseMirror p.is-editor-empty:first-child::before { content: attr(data-placeholder); color: #aeaeb2; float: left; pointer-events: none; height: 0; }
+.ProseMirror pre { background: #1e1e1e; color: #e6e6e6; padding: 12px 14px; border-radius: 8px; font-size: 13px; }
+.ProseMirror code { font-family: ui-monospace, Menlo, monospace; }
+/* 协作者光标(CollaborationCursor 默认类名) */
+.collaboration-cursor__caret { border-left: 1px solid; border-right: 1px solid; margin-left: -1px; margin-right: -1px; pointer-events: none; position: relative; word-break: normal; }
+.collaboration-cursor__label { border-radius: 3px 3px 3px 0; color: #fff; font-size: 11px; font-weight: 600; left: -1px; line-height: normal; padding: 1px 5px; position: absolute; top: -1.35em; user-select: none; white-space: nowrap; }
+/* AI 块 */
+.ai-block { border-left: 3px solid #0a84ff; background: #f0f6ff; padding: 8px 12px; border-radius: 6px; margin: 8px 0; position: relative; }
+.ai-block[data-status="streaming"] { border-left-color: #ff9f0a; }
+.ai-block[data-status="error"], .ai-block[data-status="cancelled"] { border-left-color: #ff3b30; background: #fff2f1; }
+.ai-block::before { content: "AI · " attr(data-status); position: absolute; right: 10px; top: 4px; font-size: 11px; color: #8e8e93; }
+.versions { font-size: 12px; color: #6e6e73; margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; }
+.versions button { font-size: 12px; }
+.readonly-banner { background: #fff8e1; border: 1px solid #ffe08a; border-radius: 8px; padding: 6px 10px; font-size: 12px; margin-bottom: 10px; }
+/* 布局:正文 + 侧栏 */
+.layout { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.layout.with-side { grid-template-columns: 1fr 320px; }
+.side { background: #fff; border: 1px solid #e5e5ea; border-radius: 12px; padding: 14px; font-size: 13px; align-self: start; position: sticky; top: 16px; max-height: 85vh; overflow: auto; }
+.side-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.side-head button { font-size: 12px; padding: 2px 8px; border: 1px solid #d2d2d7; border-radius: 6px; background: #fff; }
+.side blockquote { margin: 8px 0; padding: 8px 10px; background: #f5f5f7; border-left: 3px solid #0a84ff; border-radius: 4px; }
+.muted { color: #8e8e93; font-size: 12px; }
+/* 引用角标 */
+.citation { color: #0a84ff; cursor: pointer; font-size: 11px; padding: 0 2px; }
+.citation:hover { text-decoration: underline; }
+/* 斜杠菜单 */
+.slash { position: fixed; z-index: 50; background: #fff; border: 1px solid #e5e5ea; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,.08); min-width: 220px; padding: 4px; }
+.slash-item { display: flex; justify-content: space-between; gap: 12px; padding: 6px 10px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+.slash-item small { color: #8e8e93; }
+.slash-item.on, .slash-item:hover { background: #f0f6ff; }
+/* 结构化块 */
+.sb { border: 1px solid #e5e5ea; border-radius: 8px; padding: 10px 12px; margin: 8px 0; background: #fafafa; }
+.sb-head { font-size: 11px; color: #8e8e93; margin-bottom: 6px; text-transform: uppercase; letter-spacing: .04em; }
+.sb-title { font-weight: 600; margin-bottom: 4px; }
+.sb-chart rect { fill: #0a84ff; } .sb-chart text { font-size: 11px; fill: #6e6e73; }
+.sb-table { border-collapse: collapse; font-size: 13px; } .sb-table th, .sb-table td { border: 1px solid #e5e5ea; padding: 4px 10px; } .sb-table th { background: #f0f0f3; }
+.sb-code { background: #1e1e1e; color: #e6e6e6; padding: 10px 12px; border-radius: 6px; font-size: 12px; margin: 0; white-space: pre-wrap; }

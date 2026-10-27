@@ -1,0 +1,37 @@
+{
+  "name": "collab-notes",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3100",
+    "build": "next build",
+    "start": "next start -p 3100",
+    "server": "node server/sync-server.mjs",
+    "crdt-demo": "node server/mini-crdt.mjs"
+  },
+  "dependencies": {
+    "@tiptap/core": "^2.10.3",
+    "@tiptap/extension-collaboration": "^2.10.3",
+    "@tiptap/extension-collaboration-cursor": "^2.10.3",
+    "@tiptap/extension-placeholder": "^2.10.3",
+    "@tiptap/pm": "^2.10.3",
+    "@tiptap/react": "^2.10.3",
+    "@tiptap/starter-kit": "^2.10.3",
+    "lib0": "^0.2.99",
+    "next": "^14.2.15",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "ws": "^8.18.0",
+    "y-indexeddb": "^9.0.12",
+    "y-prosemirror": "^1.2.12",
+    "y-protocols": "^1.0.6",
+    "y-websocket": "^2.0.4",
+    "yjs": "^13.6.20"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/react": "^18.3.11",
+    "@types/ws": "^8.5.12",
+    "typescript": "^5.6.3"
+  }
+}
